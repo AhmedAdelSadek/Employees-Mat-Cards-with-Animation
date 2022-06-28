@@ -1,0 +1,109 @@
+<div class="tp-wrapper">
+
+
+
+
+
+  <div class="tp-box" [@flipState]="flip">
+    <!--Front-->
+    <div class="tp-box__side tp-box__front" fxLayout="column">
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <button mat-icon-button (click)="toggleFlip()">
+          <mat-icon class="customMatIcon">info</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>chat</mat-icon>
+        </button>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-around center">
+        <div class="avatar-container">
+          <img class="avatar" src="../../../assets/images/ProfilePicture.png">
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="text-container">
+          <b>{{member.name}}</b>
+        </div>
+      </div>
+      <mat-divider class="w-100-p mt-24"></mat-divider>
+      <div fxLayout="row" fxLayoutAlign="space-evenly center" fxFlex="100">
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50">
+          <button mat-icon-button (click)="handleEmailButtonClick(member)">
+            <mat-icon>email</mat-icon>
+          </button>
+          <span (click)="handleEmailButtonClick(member)" class="pointer">Email</span>
+        </div>
+        <mat-divider class="divider" [vertical]="true"></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50">
+          <button mat-icon-button (click)="handleCallButtonClick(member)">
+            <mat-icon>phone</mat-icon>
+          </button>
+          <span (click)="handleCallButtonClick(member)" class="pointer">Call</span>
+        </div>
+      </div>
+    </div>
+    <!--/Front-->
+    <!--Back-->
+    <div class="tp-box__side tp-box__back">
+      <div fxLayout="row" fxLayoutAlign="space-around center" style="height: 70px;" class="Sadek">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <img class="image" src="../../../assets/images/ProfilePicture.png">
+          <b class="ml">{{'first'}} {{ 'last'}}</b>
+        </div>
+        <div>
+          <button mat-icon-button (click)="toggleFlip()">
+            <mat-icon class="close-icon">close</mat-icon>
+          </button>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div fxLayout="column" fxLayoutAlign="center start" class="paragContainer">
+        <p class="marging-text">
+          <b>
+            <mat-icon>work</mat-icon> Company :
+          </b>
+          {{'company Name'}}
+        </p>
+
+        <p class="marging-text">
+          <b>
+            <mat-icon>location_city</mat-icon> City :
+          </b>{{'city'}}
+        </p>
+
+        <p class="marging-text">
+          <b>
+            <mat-icon>location_on</mat-icon> Zipcode :
+          </b>{{'zipCode'}}
+        </p>
+
+        <p (click)="handleEmailButtonClick(member)" class="pointer marging-text">
+          <b>
+            <mat-icon>email</mat-icon>Email:
+          </b>
+          {{'email'}}
+        </p>
+
+        <p (click)="handleCallButtonClick(member)" class="pointer marging-text">
+          <b>
+            <mat-icon>phone</mat-icon>Phone Number :
+          </b>
+          {{'phone'}}
+        </p>
+
+        <p (click)="handleCallButtonClick(member)" class="pointer marging-text">
+          <b>
+            <mat-icon>mobile_friendly</mat-icon>Mobile :
+          </b>
+          {{'mobile'}}
+        </p>
+
+        <p class="marging-text">
+          <b>
+            <mat-icon>cake</mat-icon>Birthday :
+          </b>
+          {{'birthdate'}}
+        </p>
+      </div>
+    </div>
+    <!--/Back-->
+  </div>
+</div>

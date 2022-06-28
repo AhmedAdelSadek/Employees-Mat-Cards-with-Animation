@@ -1,0 +1,9 @@
+<!--fxLayoutAlign: justify-content align-items  =  place-content: center space-evenly;-->
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-evenly center">
+    <div *ngFor="let x of obs | async" fxLayout="row wrap" fxFlex="22">
+        <card [member]="x"></card>
+    </div>
+    <mat-paginator #paginator [showFirstLastButtons]="true" fxFlex="100" [pageSizeOptions]="[5, 10, 25, 50]"
+        [pageSize]="5">
+    </mat-paginator>
+</div>
